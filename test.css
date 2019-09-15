@@ -11,3 +11,9 @@ body {
   #demo {
       color: red;
   }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+

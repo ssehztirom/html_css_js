@@ -2,6 +2,13 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="test.css">
+        <link rel="stylesheet" type="text/css" href="css_for_slideshow.css">
+
+        <script type="text/javascript" src="test.js"></script>
+        <script type="text/javascript" src="slideshow.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8" /> 
     </head>
 <body>
 
@@ -13,7 +20,53 @@
 
 <p>(myFunction is stored in an external file called "myScript.js")</p>
 
-<script src="test.js"></script>
+<!-- <script src="test.js"></script>-->
+
+<!--<img id="test" src="kermit.jpg" onmouseover="hover(this);" onmouseout="unhover(this);" alt="Kermit" style="width:200px;height:200px;"> -->
+<p>Der Kermit ändert jetzt jetzt die grösse wenn sich das fenster ändert und umlaute gehen auch (über das utf-8 encoding Schema) </p>
+
+<img src="kermit.jpg">
+
+<p>Und hier noch ne slideshow</p>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 4</div>
+      <img class="slideimg" src="kermit1.jpg">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 4</div>
+      <img class="slideimg" src="piggy.jpg">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img class="slideimg" src="kruemel.jpg">
+      <div class="text">Caption Three</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img class="slideimg" src="oscar.jpg">
+        <div class="text">Caption Three</div>
+      </div>
+    
+    <script>showSlides(1)</script>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    </div>
+    <br>
+    
+    <!-- <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div> -->
+
 
 </body>
 </html>
