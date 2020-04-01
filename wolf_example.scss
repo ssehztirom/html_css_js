@@ -1,0 +1,130 @@
+$lightblue: #e8f8ff;
+$lightblue2: #b8d4e0;
+$darkblue: #97aab2;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding: 15px;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.table {
+    /**
+     * Makes all columns equal width.
+     * Then we override the first column to be only 10% width.
+     * The other columns stay equally wide.
+     */
+    table-layout: fixed;
+    width: 100%;
+    td,
+    th {
+        padding: 10px;
+        text-align: center;
+        border-right: 1px solid $darkblue;
+        &:first-child {
+            width: 15%;
+        }
+        &:last-child {
+            border-right: none;
+        }
+    }
+    th {
+        background-color: $lightblue2;
+        border-bottom: 1px solid $darkblue;
+    }
+    tbody tr:nth-child(even) {
+        background-color: $lightblue;
+    }
+}
+
+
+/**
+ * Small Screen Only
+ */
+
+@media (max-width: 500px) {
+    .table {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        &::after {
+            content: '';
+            width: 10px;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%) 0 center;
+            background-repeat: no-repeat;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        thead {
+            display: flex;
+            flex-shrink: 0;
+            //min-width: min-content;
+            position: relative;
+            &::after {
+                content: '';
+                width: 10px;
+                background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%) 0 center;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: 100%;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+        }
+        tbody {
+            display: flex;
+            position: relative;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+        tr {
+            display: flex;
+            flex-direction: column;
+            //min-width: min-content;
+            flex-shrink: 0;
+            position: relative;
+            z-index: -1;
+        }
+        td {
+            border-right: 0;
+        }
+        th {
+            text-align: left;
+        }
+        th,
+        th:last-child {
+            border-right: 1px solid $darkblue;
+        }
+        td,
+        th {
+            border-bottom: 1px solid $darkblue;
+            &:first-child {
+                width: auto;
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}

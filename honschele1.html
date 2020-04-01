@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function randompos() {
+            var x = document.getElementsByTagName("p");
+            var randomx = Math.round(Math.random() * (x.length - 1))
+            alert(randomx.toSource())
+
+            document.getElementsByTagName("p")[randomx].innerHTML = "<img src=\"piggy.jpg\", width=\"100\",height=\"100\">";
+        }
+
+        function myFunction() {
+            document.getElementById("imaget").innerHTML = "<img src=\"piggy.jpg\", width=\"100\",height=\"100\">";
+        }
+
+        function myFunction2() {
+            document.getElementById("demo").innerHTML = "<img src=\"kermit.jpg\", width=\"100\",height=\"100\">";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>A Web Page</h1>
+    <p id="demo">A Paragraph</p>
+    <p id="imaget"></p>
+    <button type="button" onclick="randompos()">Try that</button>
+    <button type="button" onclick="myFunction2()">Try this</button>
+
+</body>
+
+</html>
